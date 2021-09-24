@@ -25,6 +25,7 @@ export class AuthStore {
         this.isLoggedOut$ = this.isLoggedIn$.pipe(map(loggedIn => !loggedIn));
 
         const user = localStorage.getItem(AUTH_DATA);
+        console.log("🚀 ~ file: auth.store.ts ~ line 28 ~ AuthStore ~ constructor ~ user", user)
 
         if (user) {
             this.subject.next(JSON.parse(user));
